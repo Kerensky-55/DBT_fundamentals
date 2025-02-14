@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: stg_jaffle_shop__customers
+    description: one unique customer per row
+    columns:
+      - name: customer_id
+        description: primary key
+        tests:
+          - unique
+          - not_null
+      - name: first_name
+        description: first name of customers
+      - name: last_name
+        description: last name of customers 
+  - name: stg_jaffle_shop__orders
+    description: one unique order per row
+    columns:
+      - name: order_id
+        description: primary key
+        tests:
+          - unique
+          - not_null
+      - name: status
+        description: "{{ doc('order_status')}}" 
+        tests:
+          - accepted_values:
+              values:
+                - completed
+                - shipped
+                - returned
+                - return_pending
+                - placed
+      - name: customer_id
+        description: foreign key pointing to stg_jaffle_shop__customers
+        tests:
+          - relationships:
+              field: customer_id
+              to: ref('stg_jaffle_shop__customers')
+      - name: order_date
+        description: dates when order was placed
+
