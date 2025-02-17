@@ -1,0 +1,16 @@
+version: 2
+
+seeds:
+  - name: employees
+    columns:
+      - name: employee_id
+        description: "The ID of the employee"
+        tests:
+          - not_null
+          - unique    
+      - name: email
+        description: "The email address of the employee"
+      - name: customer_id
+        description: "The ID of the customer associated with the employee"
+      - name: department
+        description: "The department the employee belongs to"
