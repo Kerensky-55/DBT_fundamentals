@@ -7,7 +7,7 @@ sources:
     schema: jaffle_shop
     freshness:
       error_after:
-        count: 4
+        count: 7
         period: day
       warn_after:
         count: 1
