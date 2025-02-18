@@ -1,0 +1,26 @@
+exposures:
+  - name: orders_data
+    label: orders data
+    type: notebook
+    maturity: high
+    url: https://tinyurl.com/jaffle-shop-reporting
+    depends_on:
+      - ref('fct_orders')
+    owner:
+      name: Ankur Falari
+      email: ankurfalari55@gmail.com
+
+  - name: customer_data
+    label: customer data
+    type: notebook
+    maturity: high
+    url: https://tinyurl.com/jaffle-shop-reporting-customer
+    description: 'csutomer'
+    depends_on:
+      - ref('dim_customers')
+    owner:
+      name: Ankur Falari
+      email: ankurfalari55@gmail.com
+
+
+      
