@@ -43,6 +43,10 @@ models:
     staging:
       +materialized: view
 
+snapshots:
+  your_project_name:
+    +target_schema: raw
+    +target_database: analytics_snapshot
     
 
 
